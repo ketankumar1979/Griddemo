@@ -1,0 +1,30 @@
+package grid;
+
+import org.openqa.selenium.Platform;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
+
+import java.net.MalformedURLException;
+import java.net.URL;
+
+public class KetanDemo {
+
+        public static void main (String[]args)throws MalformedURLException {
+
+            DesiredCapabilities caps = new DesiredCapabilities();
+            caps.setBrowserName("chrome");
+           // caps.setPlatform(Platform.WIN10);
+            //driver = new RemoteWebDriver(new URL(nodeurl),caps);
+            // ChromeOptions options = new ChromeOptions();
+           // options.merge(caps);
+            String huburl = "http://192.168.0.7:4444/wd/hub";
+            WebDriver driver = new RemoteWebDriver(new URL(huburl),caps);
+
+           // WebDriver driver = new RemoteWebDriver(url, caps);
+            //driver.manage().window().maximize();
+            driver.get("https://jqueryui.com/droppable/");
+
+        }
+    }
